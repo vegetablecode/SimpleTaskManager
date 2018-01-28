@@ -1,2 +1,1 @@
-# SimpleTaskManager
-Learning JavaFX
+SimpleTaskManager - simple project in JavaFX.
