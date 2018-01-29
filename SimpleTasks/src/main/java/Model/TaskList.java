@@ -23,4 +23,8 @@ public class TaskList {
 		return tasks.get(id);
 	}
 	
+	public List<Task> getTaskList(){
+		return tasks;
+	}
+	
 }
