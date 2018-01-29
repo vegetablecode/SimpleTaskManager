@@ -5,6 +5,7 @@ import Model.TaskList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -18,16 +19,25 @@ public class Main extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		TaskList tasks = new TaskList();
+		// attirbutes
+		TaskList tasks;
+		FXMLLoader loader;
+		Pane stackPane;
+		StackPaneController controller;
+		Scene scene;
 		
-		FXMLLoader loader = new FXMLLoader();
+		// objects & setup
+		
+		tasks = new TaskList();
+		loader = new FXMLLoader();
+		
 		loader.setLocation(this.getClass().getResource("/fxml/StackPaneWindow.fxml"));
+		stackPane = loader.load();
 		
-		StackPane stackPane = loader.load();
-		StackPaneController controller = loader.getController();
+		controller = loader.getController();
 		controller.setTasks(tasks);
-		Scene scene = new Scene(stackPane);
 		
+		scene = new Scene(stackPane);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("SimpleTasks");
 		primaryStage.show();
