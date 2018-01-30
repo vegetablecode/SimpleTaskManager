@@ -27,7 +27,6 @@ public class Main extends Application{
 		Scene scene;
 		
 		// objects & setup
-		
 		tasks = new TaskList();
 		loader = new FXMLLoader();
 		
@@ -38,6 +37,7 @@ public class Main extends Application{
 		controller.setTasks(tasks);
 		
 		scene = new Scene(stackPane);
+		scene.getStylesheets().add("/styles/dark.css");
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("SimpleTasks");
 		primaryStage.show();
